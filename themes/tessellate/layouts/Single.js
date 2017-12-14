@@ -12,7 +12,7 @@ let Single = React.createClass({
   },
 
   handleScrolly(e){
-    scrollToElement("#first", {
+    scrollToElement("#third", {
       duration: 1500,
       offset: 0,
       ease: 'in-sine'
@@ -35,45 +35,37 @@ let Single = React.createClass({
       <section id="header" className="dark">
         <header>
           <h1>Welcome to {theConfig?theConfig.name:"Rendact"}</h1>
-          <p>{theConfig?theConfig.tagline:"Hello"}</p>
+          <h1><Link to={"/"}>{theConfig?theConfig.name:"Rendact"}</Link></h1>
+          <nav id="menu">
+            {this.props.theMenu()}
+          </nav>
         </header>
         <footer>
           <a href="#first" className="button scrolly" onClick={this.handleScrolly}>Proceed to second phase</a>
         </footer>
       </section>
 
-      <section id="first" className="main">
-        <header>
-          <div className="container">
-            <h2>Tessellate is a free responsive site template</h2>
-            <p>Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet consequat<br />
-            feugiat. Gravida dis placerat lectus ante vel nunc euismod eget ornare varius gravida euismod lorem ipsum dolor sit amet.</p>
-          </div>
-        </header>
-      </section>
-
-
-      <section id="third" className="main">
-        {postData &&
-          <header>
-            <div className="container">
-              <h2>{postData.title && postData.title}</h2>
-            </div>
-          </header>
-          <div className="content dark style3">
-            <div className="container">
-              <span className="image featured">
-                <img src={postData.imageFeatured ? postData.imageFeatured.blobUrl: require('images/logo-128.png') } alt="" />
-              </span>
-              <div className="row">
-                <div className="12u 12u(narrow)">
-                  <p dangerouslySetInnerHTML={{__html: postData.content ? postData.content :""}} />
+      {postData &&
+        <section id="third" className="main">
+            <header>
+              <div className="container">
+                <h2>{postData.title && postData.title}</h2>
+              </div>
+            </header>
+            <div className="content dark style3">
+              <div className="container">
+                <span className="image featured">
+                  <img src={postData.imageFeatured ? postData.imageFeatured.blobUrl: require('images/logo-128.png') } alt="" />
+                </span>
+                <div className="row">
+                  <div className="12u 12u(narrow)">
+                    <p dangerouslySetInnerHTML={{__html: postData.content ? postData.content :""}} />
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        } 
-      </section>
+        </section>
+      }
 
       <section id="fourth" className="main">
         

@@ -27,8 +27,11 @@ let Blog = React.createClass({
       
       <section id="header" className="dark">
         <header>
-          <h1>Welcome to {theConfig?theConfig.name:"Rendact"}</h1>
+          <h1><Link to={"/"}>{theConfig?theConfig.name:"Rendact"}</Link></h1>
           <p>{theConfig?theConfig.tagline:"Hello"}</p>
+          <nav id="menu">
+            {this.props.theMenu()}
+          </nav>
         </header>
         <footer>
           <a href="#first" className="button scrolly" onClick={this.handleScrolly}>Proceed to second phase</a>

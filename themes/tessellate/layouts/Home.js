@@ -32,8 +32,11 @@ let Home = React.createClass({
       
       <section id="header" className="dark">
         <header>
-          <h1>Welcome to {theConfig?theConfig.name:"Rendact"}</h1>
+          <h1><Link to={"/"}>{theConfig?theConfig.name:"Rendact"}</Link></h1>
           <p>{theConfig?theConfig.tagline:"Hello"}</p>
+          <nav id="menu">
+            {this.props.theMenu()}
+          </nav>
         </header>
         <footer>
           <a href="#first" className="button scrolly" onClick={this.handleScrolly}>Proceed to second phase</a>
@@ -61,14 +64,14 @@ let Home = React.createClass({
                     <h3><Link to={"/post/" + post.id}>{post.title && post.title}</Link></h3>
                     <p dangerouslySetInnerHTML={{__html: post.content ? post.content.slice(0, 150):""}} />
                     <footer>
-                      <a href="#third" className="button scrolly">Accumsan nisi tempor</a>
+                      <Link className="button alt" to={"/post/" + post.id}>Read More</Link>
                     </footer>
                   </section>
                 </div>
                 <div className="6u 12u(narrow)">
                   <div className="row">
                     <div className="12u">
-                      <Link to={"/post/" + post.id}>
+                      <Link  className="image fit" to={"/post/" + post.id}>
                         <img src={post.imageFeatured ? post.imageFeatured.blobUrl: require('images/logo-128.png') } alt="" />
                       </Link>
                     </div>

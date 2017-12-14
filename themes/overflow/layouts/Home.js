@@ -39,8 +39,11 @@ let Home = React.createClass({
       <div>
         <section id="header" >
           <header>
-            <h1>{theConfig?theConfig.name:"Rendact"}</h1>
+            <h1><Link to={"/"}>{theConfig?theConfig.name:"Rendact"}</Link></h1>
             <p>{theConfig?theConfig.tagline:"Hello"}</p>
+            <nav id="menu">
+              {this.props.theMenu()}
+            </nav>
           </header>
           <footer>
             <a href="#banner" className="button style2 scrolly-middle" onClick={this.handleScrolly}>Proceed as anticipated</a>

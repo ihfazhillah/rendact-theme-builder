@@ -1998,7 +1998,7 @@
 	#header {
 		position: relative;
 		margin: 0;
-		background-image: url("images/overlay.png"), url("../../images/header.jpg");
+		background-image: url("images/overlay.png"), url("../../images/time.jpg");
 		background-size: auto, cover;
 		background-position: top left, center center;
 		background-repeat: repeat, no-repeat;
@@ -2428,4 +2428,39 @@
 
 	.pagination span {
 		color: #eeeeee;
+	}
+
+/* Menu */
+
+	#menu ul {
+		-moz-user-select: none;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		color: #3d4449;
+		font-family: "Roboto Slab", serif;
+		font-family: 400;
+		letter-spacing: 0.075em;
+		list-style: none;
+		margin-bottom: 0;
+		padding: 0;
+		text-transform: uppercase;
+	}
+
+	#menu ul li {
+		background-color: none;
+    border: 2px solid #e7e7e7;
+    border-radius: 8px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+		display: inline-block;
+	}
+
+	.test {
+    background-color: yellow;
 	}
